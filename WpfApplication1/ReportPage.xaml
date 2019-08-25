@@ -1,0 +1,31 @@
+﻿<Window
+    
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1" xmlns:tr="http://schemas.telerik.com/wpf" x:Class="WpfApplication1.ReportPage"
+        xmlns:telerikReporting="clr-namespace:Telerik;assembly=Telerik.Reporting"
+        xmlns:reporting="clr-namespace:Telerik.Reporting;assembly=Telerik.Reporting"
+        mc:Ignorable="d"
+       Title="AMANSIE WEST RURAL BANK" Height="500" Width="1000" WindowState="Maximized" KeyUp="ReportPage_OnKeyUp" Icon="media/amasie-bank-logo.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="388*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF2D4F1D" Margin="0,10" Stroke="Black"/>
+        <Label Grid.Row="0" x:Name="label" Content="Generate Reports" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="32" Width="279" Height="66" Foreground="White"/>
+        <ComboBox x:Name="ReportType" SelectionChanged="ReportType_OnSelectionChanged"  FontSize="16" Margin="0,31,24,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="210"/>
+        <Label x:Name="label1" Foreground="White" Content="Select Report Type" FontWeight="Bold" FontSize="19" Margin="0,23,239,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="177"/>
+        <tr:ReportViewer Name="AmansieReportViewer" Grid.Row="1">
+            
+        </tr:ReportViewer>
+
+
+
+
+
+
+    </Grid>
+</Window>

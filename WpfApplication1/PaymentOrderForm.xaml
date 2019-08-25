@@ -1,0 +1,95 @@
+﻿<Window x:Class="WpfApplication1.PaymentOrderForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Payment Order" Height="600" Width="1000" WindowStartupLocation="CenterOwner" Icon="media/amasie-bank-logo.png">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"></Setter>
+        </Style>
+
+        <!--<Style TargetType="TextBox">
+         <Setter Property="Margin" Value="10"></Setter>
+     </Style>-->
+    </Window.Resources>
+
+    <Grid Background="#FFEAE8E8">
+        <!--<StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FFA03636" Margin="1,0,0,35" Height="35" Grid.ColumnSpan="2">
+           <Label Content="Add New Drug" FontSize="20" Padding="5,5,4,5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFFBF9F9" Height="45" Width="155"></Label>
+       </StackPanel>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49.802"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="3*"/>
+
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="PendingDataGrid" IsReadOnly="True" VerticalScrollBarVisibility="Auto"  AlternatingRowBackground="#c8e6c9" HorizontalAlignment="Stretch" FontSize="14" GridLinesVisibility="None" FontWeight="Bold" Grid.Column="2" Grid.RowSpan="9" Grid.Row="2" Margin="0,9,10,-136" Height="443" VerticalAlignment="Top"/>
+
+        <TextBlock Grid.Row="1" Text="P/O number" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,12"/>
+        <TextBox x:Name="poNumber" Grid.Row="1"  Grid.Column="1" Width="250" HorizontalAlignment="Left"
+                     VerticalAlignment="Bottom" Margin="5,0,0,5" Height="41" FontSize="16"/>
+
+
+        <TextBlock Text="Name/Beneficiary" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                       Margin="0,0,5,12" Grid.Row="2" Grid.Column="0" />
+        <TextBox  x:Name="beneficiary" PreviewTextInput="TextValidationTextBox" Grid.Column="1"  Width="250" HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom" Margin="5,0,0,5" Grid.Row="2" Height="41" FontSize="16" KeyDown="beneficiary_KeyDown" ToolTip="Enter name of Beneficiary" />
+
+        <TextBlock Text="Payee" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                       Margin="0,0,5,12" Grid.Row="3" Grid.Column="0" />
+        <TextBox  x:Name="payee" PreviewTextInput="TextValidationTextBox" Grid.Column="1"  Width="250" HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom" Margin="5,0,0,5" Grid.Row="3" Height="41" FontSize="16" KeyUp="Payee_OnKeyUp" />
+
+
+        <TextBlock Text="Phone" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                       Margin="0,0,5,12" Grid.Row="4" Grid.Column="0" />
+
+        <TextBox  x:Name="phone" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Height="41" Width="250" HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom" Margin="5,0,0,5" Grid.Row="4" FontSize="16"  KeyUp="Phone_OnKeyUp" ToolTip="Enter phone Number" />
+
+        <TextBlock Text="Amount" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                       Margin="0,0,5,12" Grid.Row="5" Grid.Column="0" />
+
+        <TextBox  x:Name="amount" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" Height="41" Width="250" HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom" Margin="5,0,0,5" Grid.Row="5" FontSize="16" KeyUp="Amount_OnKeyUp" />
+
+
+        <TextBlock Text="Select School" Grid.Row="6" Grid.Column="0" Margin="0,0,5,12" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <ComboBox x:Name="school" Grid.Row="6" Grid.Column="1" Margin="5,0,0,5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="102" Height="41" SelectionChanged="school_SelectionChanged">
+
+        </ComboBox>
+
+        <TextBlock Text="Interest" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                       Margin="0,0,5,12" Grid.Row="7" Grid.Column="0" />
+
+        <TextBox  x:Name="interest" Grid.Column="1" Height="41" Width="250" HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom" Margin="5,0,0,5" Grid.Row="7" IsReadOnly="True" FontSize="16"  />
+
+
+
+        <Button Background="#FF2D4F1D" Foreground="White" FontSize="16" Content="Save" Grid.Row="8" Grid.Column="1" Margin="5,1,0,5" HorizontalAlignment="Left" Name="Save" Width="102" FontWeight="Bold" Click="Save_Click"/>
+        <Rectangle Grid.ColumnSpan="3" Fill="#FF2D4F1D" Stroke="Black" Margin="0,0,0,10"/>
+        <Label x:Name="paymentOrder" Content="Payment Order" Margin="10,0,-49.211,5" Foreground="#FFF7F3F3" Grid.RowSpan="2" FontSize="25"/>
+        <Label x:Name="label" Content="Outstanding Payment Orders" Grid.Column="2" HorizontalAlignment="Center" Margin="10,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="492" Foreground="#FF2D4F1D"/>
+
+    </Grid>
+</Window>
+

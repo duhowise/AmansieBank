@@ -1,0 +1,60 @@
+﻿<Window x:Class="WpfApplication1.BillsPayable" ShowInTaskbar="False"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+ Title="AMANSIE WEST RURAL BANK" Height="500" Width="1000" WindowState="Maximized" Icon="media/amasie-bank-logo.png">
+    <Grid Margin="0,0,2,0" Background="#FFEAE8E8">
+        <Rectangle Fill="#FF2D4F1D" Height="36" Stroke="Black" VerticalAlignment="Top"/>
+        <Label x:Name="Heading" Content="BILLS PAYABLE" HorizontalAlignment="Left" Height="36" Margin="10,0,0,0" VerticalAlignment="Top" Width="980" Foreground="#FFF3EEEE" FontSize="18"/>
+        <Grid  Margin="10,55.5,420,22.5" RenderTransformOrigin="0.37,0.547">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE8E6E6" Offset="0"/>
+                    <GradientStop Color="#FFEEECEC" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="PayablesGrid" ColumnWidth="*" FontWeight="Bold" SelectionUnit="FullRow" SelectionMode="Single" GridLinesVisibility="None"
+                  AlternatingRowBackground="#c8e6c9" RowHeight="30"/>
+        </Grid>
+        <Rectangle Fill="#FF2D4F1D" HorizontalAlignment="Right" Height="59.5" Margin="0,89.5,280.5,0" Stroke="Black" VerticalAlignment="Top" Width="124.5"/>
+        <Rectangle Fill="#FF2D4F1D" HorizontalAlignment="Right" Height="59.5" Margin="0,89.5,138,0" Stroke="Black" VerticalAlignment="Top" Width="137.5"/>
+        <Rectangle Fill="#FF2D4F1D" HorizontalAlignment="Right" Height="59.5" Margin="0,89.5,0,0" Stroke="Black" VerticalAlignment="Top" Width="133"/>
+        <Label x:Name="label1" FontWeight="Bold" Content="TOTAL P/O &#xD;&#xA;AMT RECEIVED" HorizontalAlignment="Right" Height="54" Margin="0,95,280.5,0" VerticalAlignment="Top" Width="115.5" Foreground="#FFEEECEC" FontSize="14"/>
+        <Label x:Name="label1_Copy" Content="TOTAL AMT &#xD;&#xA;PAID GHC" FontWeight="Bold" HorizontalAlignment="Right" Height="51" Margin="0,95,143.744,0" VerticalAlignment="Top" Width="131.667" Foreground="#FFF9EDED" FontSize="14" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="1.273"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.478"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="label1_Copy1" FontWeight="Bold" Content="BILLS PAYABLES&#xD;&#xA;      GHC" HorizontalAlignment="Right" Height="54" Margin="0,95,10,0" VerticalAlignment="Top" Width="123" Foreground="#FFF9F3F3" FontSize="14"/>
+        <Label x:Name="totalPOAmt" FontWeight="Bold" Content="0.000" HorizontalAlignment="Right" Height="34" Margin="0,154,280.5,0" VerticalAlignment="Top" Width="124.5" Background="#FF7A7A2C" Foreground="#FFF5F3F3"/>
+        <Label x:Name="totalAmtPaid" FontWeight="Bold" Content="0.000" HorizontalAlignment="Right" Height="34" Margin="0,154,138,0" VerticalAlignment="Top" Width="137.5" Background="#FF104D09" Foreground="#FFF3EEEE"/>
+        <Label x:Name="billsPayables" FontWeight="Bold" Content="0.000" HorizontalAlignment="Right" Height="34" Margin="0,154,0,0" VerticalAlignment="Top" Width="133" Background="#FF2242B0" Foreground="#FFF1EAEA"/>
+        <Label x:Name="standingOrderLabel" FontWeight="Bold" Content="STANDING ORDER " HorizontalAlignment="Right" Margin="0,224,245,0" Width="160" Background="#FFD65336" Foreground="#FFF5F3F3" FontSize="14" Height="34" VerticalAlignment="Top"/>
+        <Label x:Name="standingOrder" Content="0.00" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,224,0,0" Width="245" Background="#FFD65336" Foreground="#FFF5F3F3" FontSize="14" Height="34" VerticalAlignment="Top"/>
+        <Label x:Name="schoolName" Content="SCHOOL NAME HERE" FontWeight="Bold" HorizontalAlignment="Right" Height="33" Margin="0,0,0,143" VerticalAlignment="Bottom" Width="405" Background="#FF2D4F1D" Foreground="#FFF3EAEA" FontSize="14"/>
+        <Label x:Name="totalPOAmt_Copy" HorizontalAlignment="Right" Height="34" Margin="0,0,245,104" VerticalAlignment="Bottom" Width="160" Background="#FF7A7A2C" Foreground="#FFF5F3F3" FontSize="14">
+            <Label x:Name="totalPOAmt_Copy3" Content="TOTAL AMOUNT PAID" Height="34" Width="160" Background="#FF7A7A2C" Foreground="#FFF5F3F3"/>
+        </Label>
+        <Label x:Name="totalPOAmt_Copy1" Content="P/O RECEIVED" HorizontalAlignment="Right" Height="34" Margin="0,0,245,65" VerticalAlignment="Bottom" Width="160" Background="#FF7A7A2C" Foreground="#FFF5F3F3" FontSize="14"/>
+        <Label x:Name="totalPOAmt_Copy2" Content="P/O OUTSTANDING" HorizontalAlignment="Right" Height="34" Margin="0,0,245,26" VerticalAlignment="Bottom" Width="160" Background="#FF7A7A2C" Foreground="#FFF5F3F3" FontSize="14"/>
+        <Label x:Name="schTotalAmtPaid" FontWeight="Bold" Content="0.00" HorizontalAlignment="Right" Height="34" Margin="0,0,0,104" VerticalAlignment="Bottom" Width="240" Background="#FF7A7A2C" Foreground="#FFF5F3F3" FontSize="14"/>
+        <Label x:Name="schPORecieved" Content="0.00" FontWeight="Bold" HorizontalAlignment="Right" Height="34" Margin="0,0,0,65" VerticalAlignment="Bottom" Width="240" Background="#FF7A7A2C" Foreground="#FFF5F3F3" FontSize="14"/>
+        <Label x:Name="schOutstanding" Content="0.00" FontWeight="Bold" HorizontalAlignment="Right" Height="34" Margin="0,0,0,26" VerticalAlignment="Bottom" Width="240" Background="#FF7A7A2C" Foreground="#FFF5F3F3" FontSize="14"/>
+        <ComboBox x:Name="selectSchool" HorizontalAlignment="Right" Height="29" Margin="0,55.5,10,0" VerticalAlignment="Top" Width="210" SelectionChanged="selectSchool_SelectionChanged">
+        </ComboBox>
+        <Label x:Name="label2" Content="SELECT SCHOOL&#xD;&#xA;" HorizontalAlignment="Right" Height="26.5" Margin="0,58,225,0" VerticalAlignment="Top" Width="179" FontSize="14"/>
+
+    </Grid>
+</Window>

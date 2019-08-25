@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApplication1.MultiPayment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+	Title="RecievePayment"
+	Height="600"
+	Width="900"
+	ShowInTaskbar="False"
+	WindowStartupLocation="CenterScreen" Icon="media/amasie-bank-logo.png">
+    <Grid Background="#FFEAE8E8">
+        <DataGrid x:Name="PaymentDataGrid" IsReadOnly="True" ColumnWidth="*" FontWeight="Bold" Margin="10,85.888,10,52.982"
+			SelectionUnit="FullRow" SelectionMode="Extended"  GridLinesVisibility="None"
+			AlternatingRowBackground="#c8e6c9" RowHeight="30" FontSize="14" />
+        <Button x:Name="RecieveAmount" Content="Confirm Payments" FontWeight="Bold"
+			Margin="761,529,10,10" Click="RecieveAmount_Click" />
+        <Rectangle Fill="#FF2D4F1D" Height="76" Margin="-3,0,0,0" Stroke="Black"
+			VerticalAlignment="Top" />
+        <Label x:Name="label" HorizontalAlignment="Left" Margin="10,12.041,0,0" VerticalAlignment="Top"
+			FontSize="14" Width="373.275" Height="73.847" Foreground="White" />
+        <TextBlock x:Name="textBlock" Foreground="#FFF5F3F3" FontSize="16"
+			Margin="586,34,173,0" TextWrapping="Wrap" Text="Filter by school" VerticalAlignment="Top"
+			FontWeight="Bold" Height="28" />
+        <ComboBox x:Name="SchoolName" Margin="719,34,10,0" VerticalAlignment="Top" SelectionChanged="SchoolName_SelectionChanged" Height="28"/>
+    </Grid>
+</Window>
